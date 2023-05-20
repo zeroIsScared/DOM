@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <body>
+
+    
+    <script>
+        
+        let promtList;
+        const ulNew= document.createElement('ul');
+        const title= document.createElement('h3');     
+        title.textContent= 'Create a list';
+        document.body.insertAdjacentElement('afterbegin', ulNew); 
+        ulNew.insertAdjacentElement('beforebegin', title);
+    do
+    {
+
+        promtList = prompt('Enter the text for list item'); 
+        console.log(prompt); 
+        if(promtList!==' ' &&  promtList!==''&& promtList!==null){    
+         
+         let newLi= document.createElement('li');
+         newLi.insertAdjacentHTML('afterbegin', promtList);      
+         ulNew.insertAdjacentElement("beforeend",newLi);} 
+        
+    }
+    while(promtList);
+
+    
+   
+   
+    </script>
+    
+</body>
+</html>

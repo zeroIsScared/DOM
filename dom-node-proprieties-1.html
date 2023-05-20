@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+  <ul>
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    // ... your code...
+
+//     There’s a tree structured as nested ul/li.
+
+// Write the code that for each <li> shows:
+
+// What’s the text inside it (without the subtree)
+const lis = document.querySelectorAll('li');
+
+for(let li of lis){
+  console.log(li.textContent);
+}
+// The number of nested <li> – all descendants, including the deeply nested ones.
+
+const animals = document.querySelector('body > ul> li');
+const nestedInAnimals = animals.querySelectorAll('*');
+let numOfLis=0;
+const title = animals.firstChild.data.trim();
+for (let child of nestedInAnimals){
+    console.log(child.tagName)
+    if(child.tagName==='LI'){
+       numOfLis++;
+    }
+}
+alert(`${title} ${numOfLis}`);
+
+for(let li of document.querySelectorAll('li')){
+    let title = li.firstChild.data.trim();
+
+    let count = li.getElementsByTagName('li').length;
+    alert( `${title} ${count}`);
+}
+  </script>
+
+</body>
+</html>
