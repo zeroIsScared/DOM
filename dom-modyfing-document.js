@@ -14,7 +14,7 @@
 
 
 //3. Why does "aaa" remain?
-importance: 1
+// importance: 1
 // In the example below, the call table.remove() removes the table from the document.
 
 // But if you run it, you can see that the text "aaa" is still visible.
@@ -98,3 +98,59 @@ while(promtList);
 </script> */
 
 //____________________________________________________________________________________
+
+// Create a tree from the object
+// importance: 5
+// Write a function createTree that creates a nested ul/li list from the nested object.
+
+let data = {
+    "Fish": {
+      "trout": {},
+      "salmon": {}
+    },
+  
+    "Tree": {
+      "Huge": {
+        "sequoia": {},
+        "oak": {}
+      },
+      "Flowering": {
+        "apple tree": {},
+        "magnolia": {}
+      }
+    }
+  };
+
+  console.log(data);
+
+  
+let container= document.getElementById('tree');
+
+  function createTree (container, data){
+    let dataKeys = Object.keys(data);
+    console.log(dataKeys);
+
+   if(dataKeys.length > 0){
+    const parentUL= document.createElement('ul');
+    container.insertAdjacentElement('afterbegin', parentUL);
+    
+    
+    dataKeys.forEach((element)=>{
+if(dataKeys.length > 0){
+    let newparentLi= document.createElement('li');
+    parentUL.insertAdjacentElement('beforeend', newparentLi);
+    
+newparentLi.insertAdjacentHTML('afterbegin',element);
+}
+    })
+}
+
+let newData= Object.values(data);
+    console.log(newData);
+for(let i=0; i < newData.length; i++){
+
+}
+    
+ 
+  }
+createTree(container, data);
